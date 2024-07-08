@@ -28,7 +28,7 @@ python3 -m http.server 9999 --bind 0.0.0.0
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_3.jpg)  
 
  проверим работоспособность используя curl
- ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_3.jpg)  
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_4.jpg)  
  
 ## Задание 2
 1. `Запустите три simple python сервера на своей виртуальной машине на разных портах` 
