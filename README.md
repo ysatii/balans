@@ -130,7 +130,7 @@ sudo systemctl status haproxy.service
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_6.jpg)   
  
 3. `Настройте балансировку Round-robin на 4 уровне`
-в секции  listen web_tcp пропишем строку **balance roundrobin**
+в секции  **listen web_tcp** пропишем строку **balance roundrobin**
 приведем конфигурационный файл /etc/haproxy/haproxy.cfg к виду 
 ```
 global
@@ -199,6 +199,12 @@ listen web_tcp
 	server s2 127.0.0.1:9999 check inter 3s weight 2
 ```
 
+
+
+перечитаем конфигурационный файл haproxy и посмотрим его состояние 
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_7.jpg)   
+
+
 Балансировка на уровне 4 работает на порту 1325 , согласно установленных весов  
 listen web_tcp  
 
@@ -210,11 +216,22 @@ listen web_tcp
 127.0.0.1:8888 вес 1  
 127.0.0.1:9999 вес 2  
 
- 
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_7.jpg)   
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_8.jpg)   
 
+4. `принудительно выключим веб сервер на порту 8888`
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_9.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_10.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_11.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_12.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
 
+ 
+  и посмотрим стаистику haproxy в веб интервейсе на порту 888
+  
+  видим что сервер s1 исключем из балансировки и помечен красным
+  
+  востановим работоспособность s1
+5. `листинг используемого конфигурационного файла`
 
  
 ## Задание 2
