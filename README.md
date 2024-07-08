@@ -352,7 +352,8 @@ curl -H 'Host:example.ru' http://127.0.0.1:8088
 Видим балансировку трафика на все три сервера согласно спрописанных весов при балансировке
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_17.jpg)  
 
-посмотрим симстему мониторинга HAProxy  
+Посмотрим симстему мониторинга HAProxy  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_18.jpg)  
+Видим третий север появившийся в балансировке!
 
 
