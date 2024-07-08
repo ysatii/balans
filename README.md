@@ -219,15 +219,15 @@ listen web_tcp
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_8.jpg)  
 
 
-4. `принудительно выключим веб сервер на порту 8888`
- и посмотрим стаистику haproxy в веб интервейсе на порту 888
+4. `принудительно выключим веб сервер на порту 8888`  
+ и посмотрим стаистику haproxy в веб интервейсе на порту 888  
   
- видим что сервер s1 исключем из балансировки и помечен красным
+ видим что сервер s1 исключем из балансировки и помечен красным  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_9.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_10.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_11.jpg)  
 
- проверим командой на какие сервера осуществляеться переброс трафика, видим что остался только сервер на порту 9999
+ проверим командой на какие сервера осуществляеться переброс трафика, видим что остался только сервер на порту 9999  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
 
  востановим работоспособность s1
