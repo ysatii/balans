@@ -14,6 +14,10 @@
  
 ## Решение 1
 1. `Запустим сервера на портах 8888 и 9999`
+
+создадим в папке проэтка папку http1 и скопируем в нее файл
+[файл](https://github.com/netology-code/sflt-homeworks/tree/main/2/http1)
+перейдем в нее и запусим сервер
 ```
 python3 -m http.server 8888 --bind 0.0.0.0
 ```
@@ -21,6 +25,9 @@ python3 -m http.server 8888 --bind 0.0.0.0
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1.jpg)  
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_1.jpg)  
 
+создадим в папке проэтка папку http2 и скопируем в нее файл
+[файл](https://github.com/netology-code/sflt-homeworks/tree/main/2/http2)
+перейдем в нее и запусим сервер
 ```
 python3 -m http.server 9999 --bind 0.0.0.0
 ```
@@ -29,6 +36,12 @@ python3 -m http.server 9999 --bind 0.0.0.0
 
  проверим работоспособность используя curl
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_4.jpg)  
+ 
+ 
+ 
+ 
+ 
+ 
  
 ## Задание 2
 1. `Запустите три simple python сервера на своей виртуальной машине на разных портах` 
