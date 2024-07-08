@@ -256,11 +256,100 @@ listen web_tcp
 ## Решение 2
 
 1. `Запустим третий сервер на python порту 7777`  
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_12.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_14.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_15.jpg)  
+
+Приводим конфиг к виду /etc/haproxy/haproxy.cfg
+
+В секции frontend example прописываем 
+    acl ACL_example.local hdr(host) -i example.local
+	use_backend web_servers if ACL_example.local
+	
+В секции web_servers дописываем стороку третий сервер
+    server s3 127.0.0.1:7000 chek 
+```
+global
+	log /dev/log	local0
+	log /dev/log	local1 notice
+	chroot /var/lib/haproxy
+	stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+	stats timeout 30s
+	user haproxy
+	group haproxy
+	daemon
+
+	# Default SSL material locations
+	ca-base /etc/ssl/certs
+	crt-base /etc/ssl/private
+
+	# See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
+        ssl-default-bind-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+        ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
+        ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
+
+defaults
+	log	global
+	mode	http
+	option	httplog
+	option	dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+	errorfile 400 /etc/haproxy/errors/400.http
+	errorfile 403 /etc/haproxy/errors/403.http
+	errorfile 408 /etc/haproxy/errors/408.http
+	errorfile 500 /etc/haproxy/errors/500.http
+	errorfile 502 /etc/haproxy/errors/502.http
+	errorfile 503 /etc/haproxy/errors/503.http
+	errorfile 504 /etc/haproxy/errors/504.http
+
+listen stats  # веб-страница со статистикой
+        bind                    :888
+        mode                    http
+        stats                   enable
+        stats uri               /stats
+        stats refresh           5s
+        stats realm             Haproxy\ Statistics
+
+frontend example  # секция фронтенд
+        mode http
+        bind :8088
+        #default_backend web_servers
+	    acl ACL_example.local hdr(host) -i example.local
+	    use_backend web_servers if ACL_example.local
+
+backend web_servers    # секция бэкенд
+        mode http
+        balance roundrobin
+        option httpchk GET /index.html  HTTP/1.1
+        http-check send hdr Content-Type html/text
+        server s1 127.0.0.1:8888 check inter 3s weight 2
+        server s2 127.0.0.1:9999 check inter 3s weight 3
+        server s3 127.0.0.1:7000 check inter 3s weight 4
+
+listen web_tcp
+
+	bind :1325
+        balance roundrobin
+        server s1 127.0.0.1:8888 check inter 3s weight 1
+    	server s2 127.0.0.1:9999 check inter 3s weight 2
+```
+
+перечитаем конфиг !  
+```
+curl -H 'Host:example.ru' http://127.0.0.1:8088
+```
+проверим балансировку трафика  
+балансировка только домена example.local  
+
+во всех остальных случая ошибка 503   
+
+
+
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_16.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_17.jpg)  
+
+посмотрим симстему мониторинга HAProxy  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_18.jpg)  
 
