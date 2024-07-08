@@ -255,10 +255,12 @@ listen web_tcp
 
 ## Решение 2
 
-1. `Создадим Две виртуальные машины и проверим с помощью команды ping видят ли они друг друга по сети`   
- Машина 1  
- ![alt text](https://github.com/ysatii/Keepalived/blob/main/img/image2.jpg)  
- Машина 2  
- ![alt text](https://github.com/ysatii/Keepalived/blob/main/img/image2_1.jpg)
-
+1. `Запустим третий сервер на python порту 7777`  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_12.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_14.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_15.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_16.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_17.jpg)  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_18.jpg)  
 
