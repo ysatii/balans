@@ -519,6 +519,33 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_3.jpg)  
 
 5. `запросим файл image1.jpg`
+  листинг /etc/nginx/conf.d/example-http.conf
+``` 
+ include /etc/nginx/include/upstream.inc;
+
+ server {
+   listen	80;
+   
+
+   server_name	example-http.com;
+   
+
+   access_log	/var/log/nginx/example-http.com-acess.log;
+   error_log	/var/log/nginx/example-http.com-error.log;
+
+   location / {
+		proxy_pass	http://example_app;
+
+   
+   
+       location ~ "\.(jpg|jpeg|gif|png|ico)$" {
+                root /var/www;
+           }
+    }
+}
+
+```
+
    файл находиться по пути /var/www/image1.jpg  
    
    ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_4.jpg)  
@@ -527,6 +554,10 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
    
    Скачаем его и просмотрим в графической оболочке  
    ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_5.jpg)  
+   
+   
+   
+   
 
 ## Задание 4
 
