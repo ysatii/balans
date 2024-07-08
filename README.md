@@ -518,6 +518,16 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
 при использовании других адресов ngnix выдаст стандартную парковочную страницу  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_3.jpg)  
 
+5. `запросим файл image1.jpg`
+   файл находиться по пути /var/www/image1.jpg  
+   
+   ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_4.jpg)  
+   
+   получим сообщение что файл бинарный!  
+   
+   Скачаем его и просмотрим в графической оболочке  
+   ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_5.jpg)  
+
 ## Задание 4
 
 1. `Запустите 4 simple python сервера на разных портах.`
