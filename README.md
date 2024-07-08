@@ -518,8 +518,8 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
 при использовании других адресов ngnix выдаст стандартную парковочную страницу  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_3.jpg)  
 
-5. `запросим файл image1.jpg`
-  листинг /etc/nginx/conf.d/example-http.conf
+5. `запросим файл image1.jpg`  
+  листинг /etc/nginx/conf.d/example-http.conf  
 ``` 
  include /etc/nginx/include/upstream.inc;
 
