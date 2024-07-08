@@ -336,20 +336,23 @@ listen web_tcp
     	server s2 127.0.0.1:9999 check inter 3s weight 2
 ```
 
-перечитаем конфиг !  
+Перечитаем конфиг !  
 ```
 curl -H 'Host:example.ru' http://127.0.0.1:8088
 ```
-проверим балансировку трафика  
+Проверим балансировку трафика  
 балансировка только домена example.local  
 
-во всех остальных случая ошибка 503   
+Во всех остальных случая ошибка 503   
 
 
 
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_16.jpg)  
+
+Видим балансировку трафика на все три сервера согласно спрописанных весов при балансировке
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_17.jpg)  
 
 посмотрим симстему мониторинга HAProxy  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_18.jpg)  
+
 
