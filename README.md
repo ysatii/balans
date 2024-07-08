@@ -555,7 +555,7 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
    Скачаем его и просмотрим в графической оболочке  
    ![alt text](https://github.com/ysatii/balans/blob/main/img/image3_5.jpg)  
    
-   
+настройки nginx представлены по ссылке![alt text](https://github.com/ysatii/balans/tree/main/nginx )  
    
    
 
