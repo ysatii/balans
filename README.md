@@ -128,7 +128,7 @@ listen web_tcp
 sudo systemctl reload haproxy.service
 sudo systemctl status haproxy.service
 ```
- ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_5.jpg)   
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_6.jpg)   
  
 ## Задание 2
 1. `Запустите три simple python сервера на своей виртуальной машине на разных портах` 
