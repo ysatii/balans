@@ -572,12 +572,12 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
 
 1. `example1.local и example2.local`
     example1.local сервеара 1 и 2 порты 8888 и 9999
-	example2.local сервеара 3 и 4 порты 7777 и 6666
+    example2.local сервеара 3 и 4 порты 7777 и 6666
 	
 	
-	листинг /etc/haproxy/haproxy.cfg
+листинг /etc/haproxy/haproxy.cfg
 ```
-	global
+global
 	log /dev/log	local0
 	log /dev/log	local1 notice
 	chroot /var/lib/haproxy
@@ -658,18 +658,18 @@ listen web_tcp
 	
 	
 	
-	перзапустим HAProxy
-	![alt text](https://github.com/ysatii/balans/blob/main/img/image4.jpg)  
+ перзапустим HAProxy
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image4.jpg)  
 	
-	посмотрим интерфейс 
-	![alt text](https://github.com/ysatii/balans/blob/main/img/image4_1.jpg)  
+ посмотрим интерфейс 
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image4_1.jpg)  
 	
-	выполним запросы к порту 8088 с указанирем доменных имен
-	![alt text](https://github.com/ysatii/balans/blob/main/img/image4_2.jpg)  
+ выполним запросы к порту 8088 с указанирем доменных имен
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image4_2.jpg)  
 	
-	запустим 4 web сеервер на порту 6666   
-	убедимся что все сервера в работе
-	![alt text](https://github.com/ysatii/balans/blob/main/img/image4_2.jpg) 
+ запустим 4 web сеервер на порту 6666   
+ убедимся что все сервера в работе
+ ![alt text](https://github.com/ysatii/balans/blob/main/img/image4_3.jpg) 
 	
 	
 
