@@ -6,7 +6,7 @@
 
 1. `Запустите два simple python сервера на своей виртуальной машине на разных портах`
 2. `Установите и настройте HAProxy, воспользуйтесь материалами к лекции  `
-по ссылке -  конфигурационный файл [файла](https://github.com/netology-code/sflt-homeworks/blob/main/2) 
+по ссылке -   [конфигурационный файл](https://github.com/netology-code/sflt-homeworks/blob/main/2) 
 3. `Настройте балансировку Round-robin на 4 уровне`
 4. `На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.`
  
@@ -201,7 +201,7 @@ listen web_tcp
 
 
 
-перечитаем конфигурационный файл haproxy и посмотрим его состояние 
+Перечитаем конфигурационный файл haproxy и посмотрим его состояние 
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_7.jpg)   
 
 
@@ -216,22 +216,31 @@ listen web_tcp
 127.0.0.1:8888 вес 1  
 127.0.0.1:9999 вес 2  
 
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_8.jpg)   
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_8.jpg)  
+
 
 4. `принудительно выключим веб сервер на порту 8888`
+ и посмотрим стаистику haproxy в веб интервейсе на порту 888
+  
+ видим что сервер s1 исключем из балансировки и помечен красным
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_9.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_10.jpg)  
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_11.jpg)  
-![alt text](https://github.com/ysatii/balans/blob/main/img/image1_12.jpg)  
+
+ проверим командой на какие сервера осуществляеться переброс трафика, видим что остался только сервер на порту 9999
 ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_13.jpg)  
 
+ востановим работоспособность s1
+![alt text](https://github.com/ysatii/balans/blob/main/img/image1_12.jpg)  
+
+
  
-  и посмотрим стаистику haproxy в веб интервейсе на порту 888
+ 
   
-  видим что сервер s1 исключем из балансировки и помечен красным
-  
-  востановим работоспособность s1
-5. `листинг используемого конфигурационного файла`
+ 
+5. `Ссылка  используемоый конфигурационный файла`
+
+[Конфигурационный файл](https://github.com/ysatii/balans/blob/main/haproxy.cfg) 
 
  
 ## Задание 2
