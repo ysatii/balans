@@ -576,6 +576,7 @@ curl -H 'Host:example-http.com' http://127.0.0.1:80
 	
 	
 листинг /etc/haproxy/haproxy.cfg
+
 ```
 global
 	log /dev/log	local0
@@ -655,6 +656,8 @@ listen web_tcp
         server s1 127.0.0.1:8888 check inter 3s weight 1
 	server s2 127.0.0.1:9999 check inter 3s weight 2
 ```
+
+
 	
 	
 	
@@ -670,6 +673,3 @@ listen web_tcp
  запустим 4 web сеервер на порту 6666   
  убедимся что все сервера в работе
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image4_3.jpg) 
-	
-	
-
