@@ -44,7 +44,7 @@ sudo apt-get install haproxy
  ![alt text](https://github.com/ysatii/balans/blob/main/img/image1_5.jpg)  
  
  Конфигурационный файл https://github.com/netology-code/sflt-homeworks/blob/main/2/haproxy/haproxy.cfg  
- дает ошибку в стоке 55 на моей версии операционной истсемы  
+ выдает ошибку в стоке 55 на моей версии операционной и сервисе haproxy  
 
  haproxy - Version: 2.0.33-0ubuntu0.1  
 
