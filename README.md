@@ -512,10 +512,11 @@ upstream example_app {
 curl -H 'Host:example-http.com' http://127.0.0.1:80
 ```
 
-Видим балансировку 7 уровня
-![alt text](https://github.com/ysatii/balans/blob/main/img/image3_1.jpg)  
+Видим балансировку 7 уровня  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image3_2.jpg)  
 
-
+при использовании других адресов ngnix выдаст стандартную парковочную страницу  
+![alt text](https://github.com/ysatii/balans/blob/main/img/image3_3.jpg)  
 
 ## Задание 4
 
